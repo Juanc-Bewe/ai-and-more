@@ -4,13 +4,23 @@ from langchain_ollama import ChatOllama
 from langchain.schema import HumanMessage
 from helpers.models_name import VERTEXAI_MODELS
 
-def call_llm():
+def call_llm_vertexai():
     user_input = hps.get_user_input()
 
-    # llm = ChatVertexAI(
-    #     model_name=VERTEXAI_MODELS.GEMINI_1_5_FLASH_002,
-    #     temperature=0,
-    # )
+    llm = ChatVertexAI(
+        model_name=VERTEXAI_MODELS.GEMINI_1_5_FLASH,
+        temperature=0,
+    )
+
+    response = llm.invoke([HumanMessage(content=user_input)])
+    print("🤖 LLM Response:\n")
+    print(response.__repr__())
+    print(f"\n{response.content}\n")
+
+
+def call_llm_ollama():
+    user_input = hps.get_user_input()
+
 
     llm = ChatOllama(
         model="llama3.2",
@@ -23,6 +33,5 @@ def call_llm():
     print(f"\n{response.content}\n")
 
 
-
 if __name__ == "__main__":
-    call_llm()
+    call_llm_vertexai()
