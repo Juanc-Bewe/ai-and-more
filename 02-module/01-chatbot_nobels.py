@@ -1,4 +1,3 @@
-from inspect import _void
 from langchain_google_vertexai import ChatVertexAI
 from helpers.models_name import VERTEXAI_MODELS
 from langchain_core.prompts import ChatPromptTemplate
@@ -17,9 +16,9 @@ def chat_with_llm(user_message) -> str:
     )
 
     # equivalent to
-    # prompt_template_injected = prompt_template.invoke({"input": user_message}) and then
-    # llm = ChatVertexAI(model_name=VERTEXAI_MODELS.GEMINI_1_5_FLASH) and then
-    # llm.invoke(prompt_template_injected)
+    # prompt_template_injected = prompt_template.invoke({"input": user_message}) # and then
+    # llm = ChatVertexAI(model_name=VERTEXAI_MODELS.GEMINI_1_5_FLASH) # and then
+    # response = llm.invoke(prompt_template_injected)
 
     chain = prompt_template | ChatVertexAI(model_name=VERTEXAI_MODELS.GEMINI_1_5_FLASH)
     response = chain.invoke({"input": user_message})
