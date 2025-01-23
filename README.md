@@ -6,10 +6,19 @@ This guide will help you set up and run this Python project using a virtual envi
 
 - Python 3.x installed on your system
 - pip (Python package installer)
+- Ollama installed on your system ([Download Ollama](https://ollama.com/download))
 
 ## Setup Instructions
 
-### 1. Create Virtual Environment
+### 1. Install and Run Ollama
+
+1. Download and install Ollama from [ollama.com/download](https://ollama.com/download)
+2. Pull and run the Llama model:
+```bash
+ollama run llama3.2
+```
+
+### 2. Create Virtual Environment
 
 For Windows:
 ```
@@ -21,7 +30,7 @@ For macOS/Linux:
 python3 -m venv .venv
 ```
 
-### 2. Activate Virtual Environment
+### 3. Activate Virtual Environment
 
 For Windows (Command Prompt):
 ```
@@ -38,14 +47,14 @@ For macOS/Linux:
 source .venv/bin/activate
 ```
 
-### 3. Install Requirements
+### 4. Install Requirements
 
 Once the virtual environment is activated (you'll see (.venv) at the beginning of your command line), install the required packages:
 ```
 pip install -r requirements.txt
 ```
 
-### 4. Set PYTHONPATH
+### 5. Set PYTHONPATH
 
 Before running any scripts, you need to set the PYTHONPATH environment variable in your terminal session:
 
@@ -55,7 +64,7 @@ export PYTHONPATH=./src:$PYTHONPATH
 
 This command needs to be executed in each new terminal session where you want to run the project's Python scripts.
 
-### 5. Verify Installation
+### 6. Verify Installation
 
 To see installed packages:
 ```
