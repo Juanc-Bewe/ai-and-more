@@ -11,10 +11,10 @@ def call_llm():
         temperature=0,
     )
 
-    response = llm.invoke(HumanMessage(content=user_input))
+    response = llm.invoke([HumanMessage(content=user_input)])
     print("🤖 LLM Response:\n")
     print(response.__repr__())
-    print("\n")
+    print(f"\n{response.content}\n")
 
 
 
