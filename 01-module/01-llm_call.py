@@ -1,13 +1,13 @@
 import helpers as hps
 from langchain_google_vertexai import ChatVertexAI
 from langchain.schema import HumanMessage
-
+from helpers.models_name import VERTEXAI_MODELS
 
 def call_llm():
     user_input = hps.get_user_input()
 
     llm = ChatVertexAI(
-        model_name=hps.VERTEXAI_MODELS.GEMINI_1_5_FLASH,
+        model_name=VERTEXAI_MODELS.GEMINI_1_5_FLASH_002,
         temperature=0,
     )
 
